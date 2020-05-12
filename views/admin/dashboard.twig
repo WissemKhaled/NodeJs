@@ -1,0 +1,42 @@
+{% extends 'admin/layout.twig' %}
+
+{% block body %}
+<h1> page d'admin </h1>
+<p>{{title}}</p>
+
+<button id="addBook" >Ajouter un livre</button>
+<button id="deco" >Déconnexion</button>
+
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="addBookSQL">
+        <form action="/admin" method="post" class="form-example" id="addSQL">
+            <label>titre</label>
+            <div class="form-example">
+              <input type="text" name="title" required placeholder="Titre">
+            </div>
+            <label>Auteur</label>
+            <div class="form-example">
+              <input type="text" name="author"  required placeholder="Auteur">
+            </div>
+            <label>Description</label>
+            <div class="form-example">
+              <input type="text" name="description"  placeholder="Description" required>
+            </div>
+            <label>PDF</label>
+            <div class="form-example">
+              <input type="file" name="pdf"  placeholder="chemin du pdf" required>
+            </div>
+            <div class="form-example">
+              <input type="submit" value="Enregistrer">
+            </div>
+        </form>
+      </div>
+
+    </div>
+  
+  </div>
+{% endblock %}
